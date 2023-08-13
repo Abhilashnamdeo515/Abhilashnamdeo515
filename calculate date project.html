@@ -1,0 +1,40 @@
+
+<html>
+    <head>
+        <title>my website</title>
+        <script type="text/javascript">
+            function agecalculator(){
+                var userinput = document.getElementById("DOB").value;
+                var dob = new Date(userinput);
+                if(userinput==null || userinput==''){
+                    document.getElementById("message").innerHTML = "**choose a date please!!!";
+                    return false;  
+                } else{
+                    var month_diff = Date.now() - dob.getTime();
+
+                    var age_dt = new Date(month_diff);
+
+                    var year = age_dt.getUTCFullYear();
+
+                    var age = Math.abs(year - 1970);
+
+                    return document.getElementById("result").innerHTML =
+                          "Age is: " + age + " years ";
+                } 
+            }
+            </script>
+    </head>
+    <body>
+        <center><br><br><br><br><br>
+            <h1 style="color: blueviolet" align="center"> Calculate age from Date of Birth <br> </h1>
+
+            <b><h2> Enter Date of Birth: <input type="date" id=DOB></h2> </b>
+            <span id = "message" style="color:red"> </span><br>
+            <button type="submit" onclick="agecalculator()"> calculate age! </button>
+            <h2 style="color:rgb(2, 31, 31)" id="result" align="center"></h2>
+        </center>
+    </body>
+</html>
+
+    
+    
